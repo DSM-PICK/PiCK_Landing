@@ -9,18 +9,30 @@ export const Header = () => {
       <img src={ae} />
       <Right>
         <Title>
-          <img src={Arrow} alt="" />
-          <LinkWrapper to="ios">
-            <LinkText>PiCK (iOS)</LinkText>
-            <LinkTextHover>PiCK (iOS)</LinkTextHover>
+          <LinkWrapper to="team">
+            <LinkText>팀 소개</LinkText>
+            <LinkTextHover>팀 소개</LinkTextHover>
           </LinkWrapper>
         </Title>
         <Title>
-          <img src={Arrow} alt="" />
-          <LinkWrapper to="android">
-            <LinkText>PiCK (AOS)</LinkText>
-            <LinkTextHover>PiCK (AOS)</LinkTextHover>
+          <LinkWrapper to="sevice">
+            <LinkText>서비스</LinkText>
+            <LinkTextHover>서비스</LinkTextHover>
           </LinkWrapper>
+        </Title>
+        <Title>
+          <LinkWrapper to="android">
+            <LinkText>픽 지원하기</LinkText>
+            <LinkTextHover>픽 지원하기</LinkTextHover>
+          </LinkWrapper>
+          <img src={Arrow} alt="" />
+        </Title>
+        <Title>
+          <LinkWrapper to="android">
+            <LinkText>픽 사용 설명서</LinkText>
+            <LinkTextHover>픽 사용 설명서</LinkTextHover>
+          </LinkWrapper>
+          <img src={Arrow} alt="" />
         </Title>
       </Right>
     </Container>
@@ -29,7 +41,7 @@ export const Header = () => {
 
 const Container = styled.div`
   display: flex;
-  position: absolute;
+  position: fixed;
   justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
@@ -53,6 +65,7 @@ const Title = styled.div`
 const LinkText = styled.p`
   margin: 0;
   transition: transform 0.5s ease;
+  //padding: 0px 28px 6px 28px;
 `;
 
 const LinkTextHover = styled.p`
@@ -61,8 +74,9 @@ const LinkTextHover = styled.p`
   left: 0;
   margin: 0;
   font-weight: 700;
-  transform: translateY(100%);
+  transform: translateY(80%);
   transition: transform 0.5s ease;
+  //padding: 0px 28px 6px 28px;
 `;
 
 const LinkWrapper = styled(Link)`
@@ -73,11 +87,12 @@ const LinkWrapper = styled(Link)`
   overflow: hidden;
   cursor: pointer;
   text-decoration: none;
-  color: #000;
+  font-size: 24px;
+  color: #fff;
   &:hover ${LinkTextHover} {
     transform: translateY(0);
   }
   &:hover ${LinkText} {
-    transform: translateY(-100%);
+    transform: translateY(-800%);
   }
 `;
