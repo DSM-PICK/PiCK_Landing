@@ -1,11 +1,16 @@
-import { Main } from "./pages/main";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
+import { Text } from "./pages/test";
+import { VideoPage } from "./pages/videoPage";
+import { Header } from "./components/header";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Main />
+        <Header />
+        <Text />
+        <VideoPage />
       </BrowserRouter>
     </>
   );
