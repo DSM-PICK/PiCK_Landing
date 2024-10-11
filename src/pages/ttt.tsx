@@ -148,14 +148,12 @@ const Title = styled.p`
   font-size: 64px;
   font-weight: 600;
   color: white;
-  margin: 0;
 `;
 
 const SubTitle = styled.p`
   font-size: 24px;
   font-weight: 600;
   color: #afadb1;
-  margin: 0;
 `;
 
 const Video = styled.video`

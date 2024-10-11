@@ -38,9 +38,7 @@ export const Main = () => {
   return (
     <>
       <Content>
-        <Header />
         <BackgroundImage />
-
         <DownArrowStyle src={DownArrow} alt="" />
         <H1 ref={(el) => el && h1Refs.current.push(el)} style={{ top: "65vh" }}>
           편안하고 즐거운 <br /> 학교를 만들고 있습니다
