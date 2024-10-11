@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { styled } from "styled-components";
-import { Header } from "../components/header";
 import BackImage from "../assets/back.jpg";
 import DownArrow from "../assets/downArrow.svg";
 import PickLogoWhite from "../assets/pickLogowhite.svg";

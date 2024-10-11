@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { Apple, PickGray600, PlayStore, ServiceImage } from "../../assets";
+import { PickGray600, ServiceImage } from "../../assets";
 import { Store } from "./components/store";
 
 export const ServicePage = () => {

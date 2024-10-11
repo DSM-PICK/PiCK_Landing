@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Main } from "./pages/main";
 import { TeamPage } from "./pages/team";
 import { Header } from "./components/header";
 import { Home } from "./pages/home";

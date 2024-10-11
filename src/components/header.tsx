@@ -11,26 +11,26 @@ export const Header = () => {
       </Link>
       <Right>
         <Title>
-          <LinkWrapper to="team">
+          <LinkWrapper href="team">
             <LinkText>팀 소개</LinkText>
             <LinkTextHover>팀 소개</LinkTextHover>
           </LinkWrapper>
         </Title>
         <Title>
-          <LinkWrapper to="service">
+          <LinkWrapper href="service">
             <LinkText>서비스</LinkText>
             <LinkTextHover>서비스</LinkTextHover>
           </LinkWrapper>
         </Title>
         <Title>
-          <LinkWrapper to="apply">
+          <LinkWrapper href="apply">
             <LinkText>픽 지원하기</LinkText>
             <LinkTextHover>픽 지원하기</LinkTextHover>
           </LinkWrapper>
           <img src={Arrow} alt="" />
         </Title>
         <Title>
-          <LinkWrapper to="https://onyx-badge-bf9.notion.site/PiCK-6078a88d316c479daf209c18185abfa0?pvs=74">
+          <LinkWrapper href="https://onyx-badge-bf9.notion.site/PiCK-6078a88d316c479daf209c18185abfa0?pvs=74">
             <LinkText>픽 사용 설명서</LinkText>
             <LinkTextHover>픽 사용 설명서</LinkTextHover>
           </LinkWrapper>
@@ -77,7 +77,7 @@ const LinkTextHover = styled.p`
   transition: transform 0.5s ease;
 `;
 
-const LinkWrapper = styled(Link)`
+const LinkWrapper = styled.a`
   position: relative;
   height: 30px;
   display: flex;

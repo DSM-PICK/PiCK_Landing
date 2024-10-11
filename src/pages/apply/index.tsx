@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { Input } from "../../components/input";
-import React, { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { RadioInput } from "../../components/radioInput";
 import { Majors } from "../../utils/Major";
 import { Button } from "../../components/button";

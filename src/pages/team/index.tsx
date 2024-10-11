@@ -1,9 +1,6 @@
 import { keyframes, styled } from "styled-components";
 import TeamImg from "../../assets/teamImg.png";
 import DownArrow from "../../assets/downArrow.svg";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
-import gsap from "gsap";
 import { MemberInfo } from "../../utils/member";
 import { MemberIntroduce } from "../../components/memberIntroduce";
 import { MissionImage } from "../../assets";

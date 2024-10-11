@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { keyframes, styled } from "styled-components";
 import BackImage from "../assets/back.jpg";
 import DownArrow from "../assets/downArrow.svg";
