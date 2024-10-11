@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <Container>
-      <img src={ae} />
+      <Link to="/">
+        <img src={ae} />
+      </Link>
       <Right>
         <Title>
           <LinkWrapper to="team">
@@ -15,20 +17,20 @@ export const Header = () => {
           </LinkWrapper>
         </Title>
         <Title>
-          <LinkWrapper to="sevice">
+          <LinkWrapper to="service">
             <LinkText>서비스</LinkText>
             <LinkTextHover>서비스</LinkTextHover>
           </LinkWrapper>
         </Title>
         <Title>
-          <LinkWrapper to="android">
+          <LinkWrapper to="apply">
             <LinkText>픽 지원하기</LinkText>
             <LinkTextHover>픽 지원하기</LinkTextHover>
           </LinkWrapper>
           <img src={Arrow} alt="" />
         </Title>
         <Title>
-          <LinkWrapper to="android">
+          <LinkWrapper to="https://onyx-badge-bf9.notion.site/PiCK-6078a88d316c479daf209c18185abfa0?pvs=74">
             <LinkText>픽 사용 설명서</LinkText>
             <LinkTextHover>픽 사용 설명서</LinkTextHover>
           </LinkWrapper>
@@ -47,7 +49,7 @@ const Container = styled.div`
   box-sizing: border-box;
   top: 0;
   left: 0;
-  padding: 28px 220px;
+  padding: 28px 200px;
   z-index: 99;
 `;
 
@@ -63,20 +65,16 @@ const Title = styled.div`
 `;
 
 const LinkText = styled.p`
-  margin: 0;
   transition: transform 0.5s ease;
-  //padding: 0px 28px 6px 28px;
 `;
 
 const LinkTextHover = styled.p`
   position: absolute;
   top: 0;
   left: 0;
-  margin: 0;
   font-weight: 700;
   transform: translateY(80%);
   transition: transform 0.5s ease;
-  //padding: 0px 28px 6px 28px;
 `;
 
 const LinkWrapper = styled(Link)`
