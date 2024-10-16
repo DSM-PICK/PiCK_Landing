@@ -26,6 +26,7 @@ export interface MemberProp {
 export interface CoreVauleProp {
   title: string;
   content: string;
+  index?: number;
 }
 
 export interface CareersProp {

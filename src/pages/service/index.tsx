@@ -17,7 +17,10 @@ export const ServicePage = () => {
             Title="iOS"
             to="https://apps.apple.com/kr/app/pick-dsm%EC%9D%84-%EC%9C%84%ED%95%9C-%ED%95%99%EA%B5%90-%EA%B4%80%EB%A6%AC-%EC%84%9C%EB%B9%84%EC%8A%A4/id6479209480"
           />
-          <Store Title="AOS" to="" />
+          <Store
+            Title="AOS"
+            to="https://github.com/DSM-Ouath/Dsm-login-server/blob/main/src/main/java/com/example/ouath/domain/user/api/UserController.java#L81"
+          />
         </StoreWrap>
       </ContentWrap>
     </Container>
