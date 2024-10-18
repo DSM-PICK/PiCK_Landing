@@ -19,7 +19,7 @@ export const ServicePage = () => {
           />
           <Store
             Title="AOS"
-            to="https://github.com/DSM-Ouath/Dsm-login-server/blob/main/src/main/java/com/example/ouath/domain/user/api/UserController.java#L81"
+            to="https://play.google.com/store/apps/details?id=com.sevenstandard.PICK"
           />
         </StoreWrap>
       </ContentWrap>
