@@ -12,7 +12,7 @@ export const Footer = () => {
 
 const FooterStyle = styled.footer`
   align-self: self-start;
-  padding-left: 200px;
+  margin-left: 6%;
   background-color: #242424;
   padding-bottom: 86px;
 `;

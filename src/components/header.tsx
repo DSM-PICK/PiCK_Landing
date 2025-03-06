@@ -73,7 +73,7 @@ const LinkTextHover = styled.p`
   top: 0;
   left: 0;
   font-weight: 700;
-  transform: translateY(80%);
+  transform: translateY(100%);
   transition: transform 0.5s ease;
 `;
 

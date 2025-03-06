@@ -10,6 +10,7 @@ export { default as PickGray600 } from "./pickgray600.png";
 export { default as Apple } from "./apple";
 export { default as PlayStore } from "./playstore";
 export { default as RightArrow } from "./rightArrow.svg";
+export { default as PiCKVideo } from './pick_introduce.mp4'
 
 export interface IconFile {
   file: string;

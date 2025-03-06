@@ -37,3 +37,8 @@ export interface CareersProp {
 export interface MajorProp {
   name: MajorType;
 }
+
+export interface HistoryProp {
+  date: string,
+  explain: string
+}

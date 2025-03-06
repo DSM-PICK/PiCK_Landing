@@ -1,36 +1,36 @@
 import { useEffect, useRef } from "react";
 import { styled, keyframes } from "styled-components";
 import SecondImg from "../assets/second.png";
-import FourthImg from "../assets/Group 3.png";
 import { Footer } from "../components/footer";
+import { History } from "../utils/history";
+import { PiCKVideo } from "../assets";
 
 export const VideoPage = () => {
   const sectionRefs = useRef<HTMLDivElement[]>([]);
+  const io = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          } else {
-            entry.target.classList.remove("visible");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    io.current = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    });
 
-    sectionRefs.current.forEach((section) => {
-      if (section) {
-        observer.observe(section);
+    const boxElList = sectionRefs.current;
+    boxElList.forEach(el => {
+      if (el) {
+        io.current?.observe(el);
       }
     });
 
     return () => {
-      sectionRefs.current.forEach((section) => {
-        if (section) {
-          observer.unobserve(section);
+      boxElList.forEach(el => {
+        if (el) {
+          io.current?.unobserve(el);
         }
       });
     };
@@ -38,7 +38,7 @@ export const VideoPage = () => {
 
   return (
     <Container>
-      <FirstTitle ref={(el) => sectionRefs.current.push(el!)}>
+      <FirstTitle ref={el => el && sectionRefs.current.push(el)}>
         <Title>
           'DSM이 실현하는 일상의 소중한 가치'라는 <br /> 비전으로
         </Title>
@@ -47,32 +47,90 @@ export const VideoPage = () => {
           미래를 만들어갑니다.
         </SubTitle>
       </FirstTitle>
-      <Video autoPlay muted loop />
-      <SecondTitle ref={(el) => sectionRefs.current.push(el!)}>
+      <Video src={PiCKVideo} autoPlay controls muted />
+
+      <SecondTitle ref={el => el && sectionRefs.current.push(el)}>
         <Title>DSM의 일상을 연결하는 서비스</Title>
         <SubTitle>
           누구에게나 일상 속에서 혁신적인 기술로 편안하고 새로운 경험을
           제공합니다.
         </SubTitle>
       </SecondTitle>
-      <Third ref={(el) => sectionRefs.current.push(el!)}>
-        <img src={SecondImg} width="100%" alt="" />
+
+      <Third ref={el => el && sectionRefs.current.push(el)}>
+        <img src={SecondImg} width="100%" height="1000px" alt="" />
         <Daily>일상을 더 편리하게</Daily>
         <Backgrounds />
       </Third>
-      <Fourth>
-        <Animaririrri ref={(el) => sectionRefs.current.push(el!)}>
+
+      <Fourth >
+        <Animaririrri ref={el => el && sectionRefs.current.push(el)}>
           <FourthTitle>픽이 만들어 온 길</FourthTitle>
           <FourthSubTitle>
             픽은 계속되는 새로운 도전으로 우리의 길을 만들어 나가고 있습니다
           </FourthSubTitle>
         </Animaririrri>
-        <img src={FourthImg} />
+        <HistoryWrap ref={el => el && sectionRefs.current.push(el)}>
+          {History.map((item) => (
+            <HistoryCard>
+              <Circle />
+              <Date>{item.date}</Date>
+              <Explain>{item.explain}</Explain>
+            </HistoryCard>
+          ))}
+        </HistoryWrap>
       </Fourth>
       <Footer />
     </Container>
   );
 };
+
+const HistoryWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    width: 90%;
+    height: 0;
+    border-bottom: 4px dashed #987cf1;
+    transform: translateX(-50%);
+  }
+`;
+
+
+const Circle = styled.div`
+  width: 32px;
+  height: 32px;
+  background-color: #AE96F5;
+  border-radius: 50%;
+  z-index: 2;
+`
+
+const HistoryCard = styled.div`
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+`
+
+const Date = styled.p`
+margin-top: 8px;
+  font-size : 32px;
+  color : #fff;
+  font-weight: 700;
+`
+
+const Explain = styled.p`
+  font-weight: 600;
+  font-size: 24px;
+  color: #848287;
+`
 
 const reveal = keyframes`
   0% {
@@ -88,12 +146,12 @@ const reveal = keyframes`
 const Container = styled.div`
   width: 100%;
   background-color: #242424;
-  padding: 200px 0px 0px 0px;
+  padding-top: 200px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 80px;
+  gap: 300px;
 `;
 
 const Title = styled.p`
@@ -110,11 +168,12 @@ const SubTitle = styled.p`
 `;
 
 const Video = styled.video`
-  background-color: #987cf1;
   width: 1000px;
   height: 520px;
   border-radius: 20px;
+  overflow: hidden;
 `;
+
 
 const Section = styled.div`
   opacity: 0;

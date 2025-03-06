@@ -1,7 +1,6 @@
 import { IconFile } from ".";
 
 export default function Apple({ file }: IconFile) {
-  console.log(file);
   return (
     <svg
       width="48"
